@@ -87,11 +87,10 @@ console.log(newEngineer);
 
   });
 
-  router.get('/engineers/:id',function(req,res){
+  router.get('/engineers/:name',function(req,res){
 
-    var engineerID=req.params.id;
-    console.log(engineerID);
-    var query = BayAmpEngineer.findOne({'id':engineerID}).select('-_id -__v');
+    var engineerID=req.params.name;
+    var query = BayAmpEngineer.find({'id':engineerID}).select('-_id -__v');
 
     query.exec(function(err,engineers){
       if(err)
