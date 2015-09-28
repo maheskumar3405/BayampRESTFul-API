@@ -90,7 +90,7 @@ console.log(newEngineer);
   router.get('/engineers/:name',function(req,res){
 
     var engineerID=req.params.name;
-    var query = BayAmpEngineer.find({'id':engineerID}).select('-_id -__v');
+    var query = BayAmpEngineer.find({'name':engineerID}).select('-_id -__v');
 
     query.exec(function(err,engineers){
       if(err)
