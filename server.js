@@ -185,9 +185,17 @@ console.log(newEngineer);
 
     }
     res.status(404).json(response);
-  
+
   });
 
+  app.get('/',function(req,res){
+
+    var response = {
+      "WelcomeMessage" : "Heroku Deployed BayAmp App"
+    };
+
+    res.status(200).send(response);
+  })
   //Default API route
   app.use('/bayamp',router);
   app.listen(port);
